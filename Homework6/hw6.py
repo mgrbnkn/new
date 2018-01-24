@@ -1,7 +1,7 @@
 import random
 
-def loc():
-    with open('words/loc.txt', encoding = 'utf-8') as f:
+def get_text(filename):
+    with open(filename, encoding = 'utf-8') as f:
         words = []
         lines = f.readlines()
         for line in lines:
@@ -10,59 +10,27 @@ def loc():
             words.append(line)
         return random.choice(words)
 
+def loc():
+    return get_text('words/loc.txt')
+
 def ling():
-    with open('words/ling.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/ling.txt')
 
 #action
 def predv():
-    with open('words/predv.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/predv.txt')
 
 #state
 def preda():
-    with open('words/preda.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/preda.txt')
 
 #coordinate    
 def conjco():
-    with open('words/conjco.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/conjco.txt')
 
 #subordinate
 def conjsu():
-    with open('words/conjsu.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/conjsu.txt')
 
 def conj():
     number = random.choice([1,2])
@@ -72,84 +40,28 @@ def conj():
         return conjsu()
     
 def subj():
-    with open('words/subj.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/subj.txt')
         
 def advs():
-    with open('words/advs.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/advs.txt')
 
 def advd():
-    with open('words/advd.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/advd.txt')
         
 def verb():
-    with open('words/verb.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/verb.txt')
 
 def obj():
-    with open('words/obj.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/obj.txt')
 
 def modal():
-    with open('words/modal.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/modal.txt')
 
 def inf():
-    with open('words/inf.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/inf.txt')
     
 def ind():
-    with open('words/ind.txt', encoding = 'utf-8') as f:
-        words = []
-        lines = f.readlines()
-        for line in lines:
-            if line.endswith('\n'):
-                line = line[:-1]
-            words.append(line)
-        return random.choice(words)
+    return get_text('words/ind.txt')
 
 def punct():
     return random.choice(['.', '!', '...'])
@@ -187,3 +99,4 @@ def sentence():
 
 for i in range(5):
     print(sentence(), end = ' ')
+
