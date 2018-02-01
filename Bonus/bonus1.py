@@ -16,19 +16,25 @@ while a > 0:
         if bool(n) == False:
             break
         else:
-            n = int(n)
-            k = k + n
-            d = d + 1
-            if d == 1:
-                nmin = n
-                nmax = n
-            if n < nmin:
-                nmin = n
-            if n > nmax:
-                nmax = n
+            if n.isalpha() == True:
+                print('Вы ввели не число. Введите число')
+            else:
+                n = int(n)
+                k = k + n
+                d = d + 1
+                if d == 1:
+                    nmin = n
+                    nmax = n
+                if n < nmin:
+                    nmin = n
+                if n > nmax:
+                    nmax = n
 
 if d == 0:
     print('Ничего не вышло :( Попробуйте перезапустить программу')
 else:
-    d = k//d
-    print('Наибольшее =',nmax,'Наименьшее =',nmin,'Среднее арифметическое =',d)
+    d = k/d
+    d = round(d,3)
+    print('Наибольшее =',nmax)
+    print('Наименьшее =',nmin)
+    print('Среднее арифметическое =',d)
