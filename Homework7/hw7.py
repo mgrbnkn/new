@@ -2,7 +2,11 @@
 #сколько в тексте прилагательных с суффиксом -ous,
 #и какая средняя длина такого прилагательного.
 
-def tokenize(filename):
+def name():
+    filename = input('Введите имя файла: ')
+    return filename
+
+def open_tokenize(filename):
     with open(filename, encoding='utf-8') as f:
         text = f.read()
     text = text.replace(',', '').replace('.', '').replace(':','').replace('?','').replace('!','').replace('"','').replace(';','').replace(')','').replace('(','')
@@ -19,9 +23,10 @@ def find_ous(words):
     return dict_ous
 
 def main():
+    filename = name()
     average = 0
     number = 0
-    tokens = tokenize('Pride_and_Prejudice.txt')
+    tokens = open_tokenize(filename)
     dictionary = find_ous(tokens)
     for value in dictionary.values():
         number = number + 1
