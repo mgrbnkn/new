@@ -10,7 +10,7 @@ def open_(filename):
     return text
 
 def find(text):
-    res = re.sub('Динозавр','Кот',text)
+    res = re.sub('Диноза.?вр','Кот',text)
     res = re.sub('динозавр','кот',res)
     return res
 
